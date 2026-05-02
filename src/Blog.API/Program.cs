@@ -1,3 +1,4 @@
+using Blog.Infrastructure.Extensions;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddInfrastructure(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,13 +20,12 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 
-    //app.MapScalarApiReference();   // new api documentation nuget: scalar.microsoft
+    //app.MapScalarApiReference(); // new api documentation package nuget: scalar.microsoft
 
     // Enable Swagger UI
     app.UseSwagger();
     app.UseSwaggerUI(options => 
     {
-        // Point to the native .NET 10 OpenAPI JSON endpoint
         options.SwaggerEndpoint("/openapi/v1.json", "My API v1");
     });
 }
