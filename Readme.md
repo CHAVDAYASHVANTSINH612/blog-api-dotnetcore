@@ -7,6 +7,8 @@ Blog API project with Clean Architecture Approch.
 EF Migration commands:
 
 dotnet ef migrations add DBSetupComment --output-dir Persistence/Migrations
+
+
 dotnet ef database update
 
 CLI commands:
