@@ -299,6 +299,12 @@ node_modules/
 # Visual Studio 6 workspace options file
 *.opt
 
+# VS Code settings
+.vscode/
+
+# Continue extension
+.continue/
+
 # Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
 *.vbw
 
@@ -391,6 +397,12 @@ FodyWeavers.xsd
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+# VS Code settings
+.vscode/
+
+# Continue extension
+.continue/
 
 # Local History for Visual Studio Code
 .history/
