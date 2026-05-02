@@ -16,8 +16,8 @@ public class BlogConfigurations : IEntityTypeConfiguration<Blog.Domain.Entities.
         builder.Property(x=> x.Title).IsRequired().HasMaxLength(250);
         builder.Property(x=> x.Content).IsRequired();
         builder.Property(x=> x.Image).IsRequired();
-        builder.Property(x=> x.CreatedAt).IsRequired().HasDefaultValue(DateTime.Now);
-        builder.Property(x=> x.UpdatedAt).IsRequired().HasDefaultValue(DateTime.Now);
+        builder.Property(x=> x.CreatedAt).IsRequired();
+        builder.Property(x=> x.UpdatedAt).IsRequired();
 
         builder.HasOne(b => b.User)
         .WithMany(u=> u.Blogs)

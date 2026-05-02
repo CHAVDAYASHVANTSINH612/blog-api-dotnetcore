@@ -7,7 +7,7 @@ using Microsoft.Identity.Client;
 
 namespace Blog.Infrastructure.Persistence.Context;
 
-public class BlogDbContext: DbContext
+public class BlogDbContext: DbContext 
 {
     
     //Way1
@@ -27,8 +27,10 @@ public class BlogDbContext: DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+         // way1: add for each configuration
          // modelBuilder.ApplyConfiguration(new UserConfiguration());
 
+        //way2:
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(BlogDbContext).Assembly);
     }
 
