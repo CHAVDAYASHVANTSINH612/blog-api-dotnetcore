@@ -1,3 +1,4 @@
+using Blog.Application.Extensions;
 using Blog.Infrastructure.Extensions;
 using Scalar.AspNetCore;
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

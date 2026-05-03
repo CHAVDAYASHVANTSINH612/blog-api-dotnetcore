@@ -2,19 +2,17 @@ using System;
 using Blog.Domain.Entities;
 using Blog.Infrastructure.Persistence.Configuration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Identity.Client;
 
 namespace Blog.Infrastructure.Persistence.Context;
 
 public class BlogDbContext(DbContextOptions<BlogDbContext> options) : DbContext(options) 
 {
-    public DbSet<User> Users;
-    public DbSet<Role> Roles;
-    public DbSet<UserRole> UserRoles;
-    public DbSet<Blog.Domain.Entities.Blog> Blogs;
-    public DbSet<Comment> Comments;
-
+    public DbSet<User> Users {get; set;}
+    public DbSet<Role> Roles {get; set;}
+    public DbSet<UserRole> UserRoles {get; set;}
+    public DbSet<Blog.Domain.Entities.Blog> Blogs {get; set;}
+    public DbSet<Comment> Comments {get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
