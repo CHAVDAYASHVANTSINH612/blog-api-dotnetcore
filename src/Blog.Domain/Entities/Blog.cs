@@ -11,6 +11,6 @@ public class Blog
     public DateTime CreatedAt {get; set;}
     public DateTime UpdatedAt {get; set;}
     public int UserId {get; set;}
-    public User User {get; set;}
-    public List<Comment> Comments {get; set;}
+    public User? User {get; set;}
+    public List<Comment> Comments {get; set;} = [];
 }
